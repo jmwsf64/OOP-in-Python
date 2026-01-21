@@ -1,0 +1,24 @@
+# explicit directories ignored
+.idea/
+demo/build/
+demo/dist/
+demo/oopDemo.py
+demo/oopDemo-b.py
+demo/scripts/
+project/submissions/
+
+# file patterns ignored
+*.pyc
+*.spec
+*.jpg
+*.avi
+*.json
+*.p
+*.pptx
+*.pdf
+*.zip
+
+# excepted files to track
+!demo/place.json
+!demo/place-default.json
+!demo/image.jpg
