@@ -6,6 +6,7 @@ demo/oopDemo.py
 demo/oopDemo-b.py
 demo/scripts/
 project/submissions/
+venv/
 
 # file patterns ignored
 *.pyc
