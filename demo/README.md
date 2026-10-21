@@ -1,9 +1,6 @@
 # Intro
 
 * `oopLecture.py` runs a GUI Window written in PyQt6. The Window contains a QTreeWidget that controls the flow of the lecture
-* While it is resource intensive, the demonstration is intended to be used with PyCharm because:
-  * PyCharm has many features that are useful for formatting Python
-  * PyCharm has useful autocomplete features like creating properties of classes to properly access Protected Attributes
 * Selecting an item under any of the lesson sections will write a string to the `oopDemo.py` file
   * Display `oopDemo.py` in an IDE or Text Editor that will easily update when the file is changed
 * The string will also be written to a unique file in `scripts/` to share with the attendees and include a comment with the notes for each script
@@ -139,12 +136,12 @@ Explanation: There is already a location in memory for the original value of `a.
 ### 1.7: Private and Protected Attributes
 
 * If we want to create a Protected Attribute in Python we can add a single `_` prefix to the attribute name
-* We can still access this outside of the class but PyCharm does not like letting us do this
-* We can let PyCharm add a new method with a `property` decorator that returns the value of the protected attribute
+* We can still access this outside of the class but we should not be doing so
+* We can add a new method with a `property` decorator that returns the value of the protected attribute
   * Now we are still getting the value of the `x` attribute, but we are not accessing the protected attribute directly
   * This seems like a lot of extra work to add a seemingly unnecessary workaround, but this allows us to adhere to the Encapsulation Principle of Object-Oriented Programming
 * To make a Private Attribute we simply add a `__` prefix to the attribute name
-  * We can not access this attribute at all when our scope is outside the class
+  * We cannot access this attribute at all when our scope is outside the class
   * Now we can set the visibility of our information and choose what we share outside the scope of the object following the Principle of Encapsulation
 * We will get into the differences between Private and Protected attributes in the `Parents and Children` section
 
@@ -201,7 +198,7 @@ Attributes are analogous to variables, and Methods are analogous to functions. M
 
 * Using the same syntax as private and protected attributes, we can create private and protected methods with the `_` and `__` prefix convention
 * Notice that both attributes here are Private Attributes
-* We can run a protected method from outside the class with no issue, but PyCharm is here to let us know that it is a protected method, and we should not do that
+* We can run a protected method from outside the class with no issue, but this is a protected method and we should not do that
 * Similarly to private attributes, we do not have access to private methods outside the class
 * However, we can create a public method that can be accessed outside the class and has access to all protected and private information of the class
 * Remember back to the `Abstraction` Principle of Object-Oriented Programming
@@ -259,7 +256,6 @@ Now that we know how to create Class Attributes and Methods, we can get into the
 * All attributes that the class will use should be in `__init__()` so that a new reader knows all attribute of the class from only inspecting `__init__()`
 * This also contributes to better usability
   * If an attribute only gets defined in another method, and we forget to call that method then it will not exist
-  * PyCharm will not give us any error except for telling us that `self.x` should be added to `__init__()`
 
 ### 3.7: More Memory Allocation 1
 
