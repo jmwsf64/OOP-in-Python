@@ -9,6 +9,7 @@ import os
 
 import cv2
 import numpy as np
+from tqdm import tqdm
 
 
 def createCharacter(
@@ -329,22 +330,14 @@ class Render:
         # -----------------------
         # loop through timestamps
         # -----------------------
-        print("Rendering scene from json file")
-        while self.__time < self.__maxTime:
-            # print time update to terminal
-            if self.__time:  # move cursor up one line and clear
-                print("\033\\[1A", end="\x1b[2K")
-            print(f"    Writing time: {round(self.__time, 1)} of {self.__maxTime}")
-
-            # add next frame to video
+        steps = np.arange(
+            self.__time, self.__maxTime + self.__time_increment, self.__time_increment
+        )
+        for _ in tqdm(steps, desc="Rendering"):
             self.__interpolate_points()
             self.__draw_frame()
             self.__writer.write(self.__frame)  # type: ignore
-
-            # increment
             self.__time += self.__time_increment
-
-        print("Finished rendering project")
         self.__writer.release()
 
     def write_first_frame(self) -> None:

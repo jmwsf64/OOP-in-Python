@@ -6,6 +6,7 @@ dependencies = [
     "numpy",
     "opencv-python",
     "PyQt6",
+    "tqdm",
 ]
 
 [tool.pyright]
